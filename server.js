@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const port = 5005; 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: process.env.CYCLIC_URL }));
 
 
 app.use(express.json());

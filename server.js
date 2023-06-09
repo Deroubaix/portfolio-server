@@ -44,11 +44,11 @@ app.post('/api/send-email', async (req, res) => {
     const mailOptions = {
       from: email, 
       to: process.env.EMAIL_USER,
-      subject: 'You got a form submission!',
+      subject: 'New contact form submission',
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
-
+   
     await transporter.sendMail(mailOptions);
     console.log('Email sent successfully');
     res.status(200).send('Email sent successfully');

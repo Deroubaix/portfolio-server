@@ -10,7 +10,7 @@ const app = express();
 
 // Add CSP middleware
 app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "default-src 'none'; font-src 'self' data: fonts.googleapis.com;");
+  res.setHeader('Content-Security-Policy', "default-src 'none'; font-src fonts.googleapis.com;");
   next();
 });
 

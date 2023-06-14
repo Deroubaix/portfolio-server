@@ -10,13 +10,13 @@ const app = express();
 
 // Add CSP middleware
 app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "default-src 'none'; font-src fonts.googleapis.com;");
+  res.setHeader('Content-Security-Policy', "default-src 'none'; font-src 'self' data: fonts.googleapis.com;");
   next();
 });
 
+app.use(cors({ origin: 'https://marishaderoubaix.netlify.app' }));
 
-
-app.use(cors({ origin: ['http://localhost:5173'] }));
+/* app.use(cors({ origin: ['http://localhost:5173'] })); */
 app.use(express.json());
 
 const oAuth2Client = new google.auth.OAuth2(
